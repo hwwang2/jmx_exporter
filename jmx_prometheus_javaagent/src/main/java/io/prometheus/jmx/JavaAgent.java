@@ -52,6 +52,7 @@ public class JavaAgent {
 
             new BuildInfoMetrics().register(PrometheusRegistry.defaultRegistry);
             JvmMetrics.builder().register(PrometheusRegistry.defaultRegistry);
+            HyThreadMetrics.builder().register(PrometheusRegistry.defaultRegistry);
             new JmxCollector(new File(config.file), JmxCollector.Mode.AGENT)
                     .register(PrometheusRegistry.defaultRegistry);
 
